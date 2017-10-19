@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;rij&apos; in &apos;be.pxl.h5.exoef16.H5ExOef16.main(...)&apos; to &apos;rrowij&apos;&#x0D;&#x0A;- Original project: &apos;H5&apos;&#x0D;&#x0A;- Original element: &apos;be.pxl.h5.exoef16.H5ExOef16.main(String[]).rij&apos;&#x0D;&#x0A;- Renamed element: &apos;rij&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;rij&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;be.pxl.h5.exoef16{H5ExOef16.java[H5ExOef16~main~\[QString;@rij!355!365!359!361!I!0!false" name="rrowij" references="true" stamp="1508145354344" version="1.0"/>
+</session>

@@ -1,0 +1,42 @@
+package extraoef1;
+
+import java.util.Scanner;
+
+public class ExtraOef1 {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		int array[][], n;
+		
+		System.out.println("Getal: ");
+		n = keyboard.nextInt();
+		
+		array = new int[n][n];
+		
+		setArrayToZero(array, n);
+		
+		keyboard.close();
+	}
+	
+	public static void setArrayToZero(int array[][], int length) {
+		
+		for(int row = 0; row < length; row++) {
+			
+			for(int colum = 0; colum < length; colum++) {
+				array[row][colum] = 0;
+			}
+		}
+	}
+	
+	public static void printArray(int array[][], int length) {
+		
+		for(int row = 0; row < length; row++) {
+			
+			for(int colum = 0; colum < length; colum++) {
+				System.out.print(array[row][colum] + " ");
+			}
+			System.out.println();
+		}
+	}
+
+}

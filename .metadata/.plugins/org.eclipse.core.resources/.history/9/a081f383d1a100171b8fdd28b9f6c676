@@ -1,0 +1,132 @@
+package be.pxl.h4.exoef4;
+
+//Opgave : https://apps.pxl.be/studievoortgang/story_html5.html
+
+import java.util.Scanner;
+
+public class H4ExOef4 {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		
+		int answer;
+		
+		System.out.println("Ja = 0; Nee = 1;");
+		System.out.println("Studeerde je reeds aan Hogeschool PXL?");
+		answer = keyboard.nextInt();
+		
+		if(answer == 0) {
+			System.out.println("Had je reeds individueel bindende voorwaarden?");
+			answer = keyboard.nextInt();
+			
+			if (answer == 0) {
+				System.out.println("Heb je de individueel bindende voorwaarden behaald?");
+				answer = keyboard.nextInt();
+				
+				if (answer == 0) {
+					System.out.println("CONCLUSIE");
+					System.out.println("Je kan je online herinschrijven in Mijn PXL tenzij je een tekort aan");
+					System.out.println("leerkrediet hebt. De algemene voorwaarde van 60% studierendement");
+					System.out.println("(= minstens 60% vande opgenomen studiepunten geslaagd) zal op jou van toepassing zijn.");
+				} else {
+					System.out.println("Kreeg je positief advies vande voortgangscommissie?");
+					System.out.println("(Dit kan je op je rapport van tweede zittijd aflezen)");
+					answer = keyboard.nextInt();
+					
+					if (answer == 0) {
+						System.out.println("Behaalde je minstens 60% studierendement (= minstens 60% van de opgenomen studiepunten geslaagd)");
+						System.out.println("het afgelopen academiejaar?");
+						answer = keyboard.nextInt();
+						
+						if (answer == 0) {
+							System.out.println("CONCLUSIE");
+							System.out.println("Je kan je online herinschrijven in Mijn PXL tenzij je een tekort aan");
+							System.out.println("leerkrediet hebt. De algemene voorwaarde van 60% studierendement");
+							System.out.println("(= minstens 60% vande opgenomen studiepunten geslaagd) zal op jou van toepassing zijn.");
+						} else {
+							System.out.println("CONCLUSIE");
+							System.out.println("Je moet een afspraak maken bij de dienst studievoortgang voor");
+							System.out.println("en studievoortgangsonderzoek. Er zal bekeken worden onder");
+							System.out.println("Welke voorwaarden je nog kan herinschrijven. Je kan online een");
+							System.out.println("afspraak maken via http://afspraken.pxl.be en dan dienst studievoortgang selecteren.");
+						}
+					} else {
+						System.out.println("CONCLUSIE");
+						System.out.println("Je wordt definitief uitgeschreven uit de opleiding.");
+				  } 
+					
+				}
+			} else {
+				System.out.println("Was je het afgelopen academiejaar voor de eerste maal ingeschreven in het hoger onderwijs?");
+				answer = keyboard.nextInt();
+				
+				if (answer == 0) {
+					System.out.println("Heb je de algemene voorwaarde van 60% studierendement");
+					System.out.println("(= minstens 60% van de opgenomen studiepunten geslaagd)");
+					System.out.println("het afgelopen academiejaar behaald?");
+					answer = keyboard.nextInt();
+					
+					if (answer == 0) {
+						System.out.println("CONCLUSIE");
+						System.out.println("Je kan je online herinschrijven in Mijn PXL tenzij je een tekort aan");
+						System.out.println("leerkrediet hebt. De algemene voorwaarde van 60% studierendement");
+						System.out.println("(= minstens 60% vande opgenomen studiepunten geslaagd) zal op jou van toepassing zijn.");
+						
+					} else {
+						System.out.println("CONCLUSIE");
+						System.out.println("Je moet een afspraak maken bij de dienst studievoortgang voor");
+						System.out.println("en studievoortgangsonderzoek. Er zal bekeken worden onder");
+						System.out.println("Welke voorwaarden je nog kan herinschrijven. Je kan online een");
+						System.out.println("afspraak maken via http://afspraken.pxl.be en dan dienst studievoortgang selecteren.");
+					}
+					
+				} else {
+					System.out.println("Heb je de algemene voorwaarde van 60% studierendement");
+					System.out.println("(= minstens 60% van de opgenomen studiepunten geslaagd)");
+					System.out.println("het afgelopen academiejaar behaald?");
+					answer = keyboard.nextInt();
+					
+					if (answer == 0)
+					{
+						System.out.println("CONCLUSIE");
+						System.out.println("Je kan je online herinschrijven in Mijn PXL tenzij je een tekort aan");
+						System.out.println("leerkrediet hebt. De algemene voorwaarde van 60% studierendement");
+						System.out.println("(= minstens 60% vande opgenomen studiepunten geslaagd) zal bij je nieuwe inschrijving op jou van toepassing zijn.");
+					} else {
+						System.out.println("CONCLUSIE");
+						System.out.println("Je kan je online herinschrijven via Mijn PXL tenzij je een tekort aan leerkrediet hebt.");
+						System.out.println("Je zal heringeschreven worden onder bindende voorwaarden.");
+					}
+					
+				}
+			}
+		} else {
+			System.out.println("Ga je voor de eerste keer inschrijven in het hoger onderwijs?");
+			answer = keyboard.nextInt();
+			
+			if (answer == 0) {
+				System.out.println("CONCLUSIE");
+				System.out.println("Je kan je inschrijven in gebouw D van Hogeschool PXL.");
+				System.out.println("De algemene voorwaarde van 60% studierendement");
+				System.out.println("(= minstens 60% van de opgenomen studiepunten geslaagd");
+				System.out.println("zal op jou van toepassing zijn.");
+			} else {
+				System.out.println("Behaalde je, in het laatste academiejaar dat je ingeschreven was in het hoger onderwijs, 60% studierendement?");
+				System.out.println("(: minstens 60% van de opgenomen studiepunten geslaagd)");
+				answer = keyboard.nextInt();
+				
+				if (answer == 0) {
+					System.out.println("CONCLUSIE");
+					System.out.println("Je kan je inschrijven in gebouw D van Hogeschool PXL");
+					System.out.println("De algemene voorwaarde van 60% studierendement (=");
+					System.out.println("minstens 60% van de opgenomen studiepunten geslaagd) zal op");
+					System.out.println("jou van toepassing zijn.");
+				} else {
+					System.out.println("CONCLUSIE");
+					System.out.println("Je kan je inschrijven in gebouw D van Hogeschool PXL.");
+					System.out.println("Je zal ingeschreven worden onder bindende voorwaarden.");
+				}
+			}
+		}
+	}
+}

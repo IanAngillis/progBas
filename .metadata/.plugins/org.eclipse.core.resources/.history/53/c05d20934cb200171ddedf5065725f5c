@@ -1,0 +1,21 @@
+package be.pxl.h5.exoef22;
+
+public class H5ExOef22 {
+
+	public static void main(String[] args) {
+		
+		char corner, horizontal, vertical;
+		
+		corner = '+';
+		horizontal = '-';
+		vertical = '|';
+		
+		printRaster(corner, horizontal, vertical);
+		
+	}
+	
+	public static void printRaster(char corner, char horizontal, char vertical) {
+		
+		System.out.println(9*corner);
+	}
+}

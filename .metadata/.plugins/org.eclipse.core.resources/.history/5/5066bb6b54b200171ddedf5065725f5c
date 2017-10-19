@@ -1,0 +1,14 @@
+package be.pxl.h5.exoef21;
+
+import java.util.Scanner;
+
+public class H5ExOef21 {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		
+		int rijksregisternummer, wagen, afgKm, mutualiteit, aantalSlachtoffers, aantalSlachtoffersLidVanMutualiteit;
+		double bedragSlachtoffer, totaalBedrag, percentageLidVanMutualiteit;
+	}
+
+}

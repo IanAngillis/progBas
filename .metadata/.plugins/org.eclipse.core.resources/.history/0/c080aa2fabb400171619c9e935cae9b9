@@ -1,0 +1,16 @@
+package be.pxl.h6.oef3;
+
+public class H6Oef3 {
+
+	public static void main(String[] args) {
+		String string = "I am the god";
+		String reverseString = null;
+		int index = string.length() - 1;
+		
+		for(int i = 0; i < string.length(); i++) {
+			reverseString += string.substring(index-1-i, index-i);
+		}
+		System.out.println(reverseString);
+	}
+
+}

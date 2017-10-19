@@ -1,0 +1,19 @@
+package opdrachten;
+
+import java.util.Random;
+
+public class Opdracht2 {
+
+	public static void main(String[] args) {
+		Random rand = new Random();
+		
+		int getal;
+		
+		for(int i = 0; i < 20; i++) {
+			
+			getal = rand.nextInt(10);
+			System.out.println(getal);
+		}
+	}
+
+}
