@@ -5,18 +5,16 @@ import java.util.Scanner;
 public class H6Oef4 {
 
 	public static void main(String[] args) {
-		Scanner keyboard = new Scanner(System.in);//Aanmaken Scanner
+		Scanner keyboard = new Scanner(System.in);
 	
-		String finalString; 
+		String finalString;
 		
-		/*Input vragen aan de gebruiker*/
 		System.out.println("Eerste tekstvariabele: ");
 		String tekstVariabele1 = keyboard.next();
 		
 		System.out.println("Tweede tekstvariabele: ");
 		String tekstVariabele2 = keyboard.next();
 		
-		//Berekeningen met strings
 		tekstVariabele1 = firstVariableChecker(tekstVariabele1);
 		tekstVariabele2 = secondVariableChecker(tekstVariabele2);
 		finalString = tekstVariabele1 + tekstVariabele2;
@@ -25,11 +23,6 @@ public class H6Oef4 {
 		keyboard.close();
 	}
 	
-	/*firstVariableChecker controleert en bewerkt de eerste ingegeven variabele
-	 * 
-	 * De functie kijkt naar de lengte van de string. Als deze lang genoeg is neemt het een substring en wordt deze omgezet naar uppercase vooraleer we de string returnen.
-	 * In het andere geval maken we een andere string met * zodat deze aan de voorwaaden voldoet. Daarna plakken we de inputstring en de gemaakte string aan elkaar en zetten we deze naar uppercase alvorens deze te returnen.
-	 * */
 	public static String firstVariableChecker(String tekstVariabele) {
 		
 		String appendString = "*";
@@ -51,7 +44,6 @@ public class H6Oef4 {
 		
 	}
 	
-	//Dezelfde uitleg als firstVariableChecker
 	public static String secondVariableChecker(String tekstVariabele) {
 		
 		int difference;
