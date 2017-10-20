@@ -4,7 +4,7 @@ public class H6Oef2 {
 
 	public static void main(String[] args) {
 		//indexOf
-		String string = "Dis is een mooie strings";
+		String string = "Dis is een mooie string";
 
 		int first_t, first_T, lowestIndex;
 		

@@ -4,12 +4,16 @@ public class H6Oef2 {
 
 	public static void main(String[] args) {
 		//indexOf
-		String string = "Dis is een mooie strings";
-
-		int first_t, first_T, lowestIndex;
+		String string = "Dis is een mooie string";
+		String finalString;
+		String temp;
+		
+		int first_t, first_T, length = 0, lowestIndex;
 		
 		first_t = string.indexOf('t');
 		first_T = string.indexOf('T');
+		
+		//Vraag slecht geformuleerd
 		
 		if(first_t == -1 && first_T == -1) {
 			
@@ -33,6 +37,7 @@ public class H6Oef2 {
 			string = stringParser(string, lowestIndex);
 		}
 		
+		System.out.println(length);
 		System.out.println(string);
 	}
 	
