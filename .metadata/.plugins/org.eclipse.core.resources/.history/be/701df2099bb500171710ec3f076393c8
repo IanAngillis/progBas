@@ -8,15 +8,19 @@ public class H6Oef4 {
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
 		
+		
+		
 		System.out.println("Eerste tekstvariabele: ");
 		String tekstVariabele1 = keyboard.next();
 		
 		System.out.println("Tweede tekstvariabele: ");
 		String tekstVariabele2 = keyboard.next();
 		
-		String appendString = "*";
+		if(tekstVariabele1.length() < 4) {
+			tekstVariabele1 = tekstVariabele1.concat("*");
+		}
 		
-		System.out.println(appendString.toUpperCase());
+		System.out.println(tekstVariabele1);
 		
 	}
 

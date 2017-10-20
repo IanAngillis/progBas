@@ -14,7 +14,7 @@ public class H6Oef4 {
 		System.out.println("Tweede tekstvariabele: ");
 		String tekstVariabele2 = keyboard.next();
 		
-		String appendString = "*";
+		String appendString = "*dsqa";
 		
 		System.out.println(appendString.toUpperCase());
 		
