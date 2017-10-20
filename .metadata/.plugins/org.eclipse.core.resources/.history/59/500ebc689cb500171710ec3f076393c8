@@ -29,7 +29,7 @@ public class H6Oef4 {
 			}
 		}
 		
-		System.out.println("tekstvariabele 1: " + tekstVariabele1);
+		System.out.println("tekstvariabele 1:  " + tekstVariabele1);
 		
 		
 		keyboard.close();

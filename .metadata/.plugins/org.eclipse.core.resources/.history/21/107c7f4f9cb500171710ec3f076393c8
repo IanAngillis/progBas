@@ -19,7 +19,7 @@ public class H6Oef4 {
 		String appendString = "*";
 		
 		if(tekstVariabele1.length() > 4) {
-			tekstVariabele1 = tekstVariabele1.substring(0, 4);
+			tekstVariabele1 = tekstVariabele1.substring(0, 3);
 		} else {
 			difference = 4 - tekstVariabele1.length();
 			
@@ -29,10 +29,9 @@ public class H6Oef4 {
 			}
 		}
 		
-		System.out.println("tekstvariabele 1: " + tekstVariabele1);
+		System.out.println("tekstvariabele 1:  " + tekstVariabele1);
 		
 		
-		keyboard.close();
 	}
 
 }

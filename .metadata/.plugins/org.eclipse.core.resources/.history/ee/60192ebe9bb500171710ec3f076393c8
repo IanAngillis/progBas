@@ -8,8 +8,6 @@ public class H6Oef4 {
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
 		
-		int difference;
-		
 		System.out.println("Eerste tekstvariabele: ");
 		String tekstVariabele1 = keyboard.next();
 		
@@ -18,21 +16,8 @@ public class H6Oef4 {
 		
 		String appendString = "*";
 		
-		if(tekstVariabele1.length() > 4) {
-			tekstVariabele1 = tekstVariabele1.substring(0, 4);
-		} else {
-			difference = 4 - tekstVariabele1.length();
-			
-			for(int i = 0; i < difference; i++) {
-				
-				tekstVariabele1 = tekstVariabele1 + appendString;
-			}
-		}
+		System.out.println(appendString.toUpperCase());
 		
-		System.out.println("tekstvariabele 1: " + tekstVariabele1);
-		
-		
-		keyboard.close();
 	}
 
 }
