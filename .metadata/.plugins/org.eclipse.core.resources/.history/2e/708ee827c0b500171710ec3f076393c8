@@ -34,7 +34,6 @@ public class H6ExOef1 {
 				System.out.println("Lager");
 			} else {
 				System.out.println("Proficiat, getal geraden");
-				break;
 			}
 			
 		}
