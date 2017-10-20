@@ -7,8 +7,8 @@ public class H6Oef4 {
 
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
-	
-		String finalString;
+		
+		int difference;
 		
 		System.out.println("Eerste tekstvariabele: ");
 		String tekstVariabele1 = keyboard.next();
@@ -16,11 +16,22 @@ public class H6Oef4 {
 		System.out.println("Tweede tekstvariabele: ");
 		String tekstVariabele2 = keyboard.next();
 		
-		tekstVariabele1 = firstVariableChecker(tekstVariabele1);
-		tekstVariabele2 = secondVariableChecker(tekstVariabele2);
-		finalString = tekstVariabele1 + tekstVariabele2;
+		String appendString = "*";
 		
-		System.out.println("De string die we zoeken is: " + finalString);
+		if(tekstVariabele1.length() > 4) {
+			tekstVariabele1 = tekstVariabele1.substring(0, 4);
+		} else {
+			difference = 4 - tekstVariabele1.length();
+			
+			for(int i = 0; i < difference; i++) {
+				
+				tekstVariabele1 = tekstVariabele1 + appendString;
+			}
+		}
+		
+		System.out.println("tekstvariabele 1: " + tekstVariabele1);
+		
+		
 		keyboard.close();
 	}
 	
@@ -40,7 +51,6 @@ public class H6Oef4 {
 			}
 		}
 		
-		tekstVariabele = tekstVariabele.toUpperCase();
 		return tekstVariabele;
 		
 	}
@@ -52,7 +62,7 @@ public class H6Oef4 {
 		String temp = "*";
 		
 		if(tekstVariabele.length() > 4) {
-			tekstVariabele = tekstVariabele.substring(tekstVariabele.length() - 4, tekstVariabele.length());
+			tekstVariabele = tekstVariabele.substring(tekstVariabele.length() - 5, tekstVariabele.length() - 1);
 		} else {
 			
 			difference = 4 - tekstVariabele.length() - 1;
@@ -64,7 +74,6 @@ public class H6Oef4 {
 			tekstVariabele = temp + tekstVariabele;
 		}
 		
-		tekstVariabele = tekstVariabele.toLowerCase();
 		return tekstVariabele;
 	}
 
