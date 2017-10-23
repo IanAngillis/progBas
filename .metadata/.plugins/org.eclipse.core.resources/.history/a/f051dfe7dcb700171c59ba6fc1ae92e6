@@ -11,7 +11,7 @@ public class H6Oef5 {
 		String eersteText;
 		String tweedeText;
 		String derdeText;
-		
+		String vierdeText;
 		
 		System.out.printf("%20s %-20s %20s %20s", text1, text2, text3, text4);
 		System.out.println();
@@ -27,19 +27,16 @@ public class H6Oef5 {
 		}
 	}
 	
-	//Maakt de string terug
 	public static String stringBuilder(int index, int code) {
 		
 		String finalString = "";
 		StringBuilder string = new StringBuilder("");
 		int limit = (index + 1);
 		
-		//Maakt het cijfergedeelte van de string.
 		for(int i = 0; i < limit; i++) {
 			string.append(i+1);
 		}
 		
-		//Maakt het "0" en "," gedeelte
 		switch (code){
 			case 1: string.append(",000000");
 					finalString = string.toString();

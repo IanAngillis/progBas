@@ -1,9 +1,9 @@
 package be.pxl.h6.oef5;
 
-public class H6Oef5 {
+public class H6Oef5Extra {
 
 	public static void main(String[] args) {
-	
+		
 		String text1 = "1. Gewoon";
 		String text2 = "2. links";
 		String text3 = "3. rechts (met null)";
@@ -60,3 +60,6 @@ public class H6Oef5 {
 	}
 
 }
+
+
+
