@@ -19,7 +19,10 @@ public class Opdracht5 {
 		System.out.println("******");
 		tekst = new StringBuilder(hulp);
 		System.out.println(tekst);
-
+		
+		tekst = new StringBuilder(tekst.toString().replaceAll("t", "tt"));
+		System.out.println("******");
+		System.out.println(tekst);
 	}
 
 }
