@@ -48,25 +48,6 @@ public class Opdracht4 {
 		tekst = tekst.trim();
 		
 		System.out.println(tekst + "!");
-		
-		//Naam samenvoegen
-		String voornaam = "jEf";
-		String familienaam = "vAn DEN boSSche";
-		String naam = voornaam.charAt(0) + ""; //Nu is het een string;
-		naam = naam.toUpperCase() + ". ";
-		naam = naam + familienaam.substring(0, 1).toUpperCase();
-		naam = naam + familienaam.substring(1).toLowerCase();
-		System.out.println(naam);
-		
-		tekst = "halloo";
-		String midden;
-		
-		if(tekst.length() % 2 == 1) {
-			midden = tekst.charAt(tekst.length()/2) + "";
-		} else {
-			midden = tekst.substring(tekst.length() / 2 - 1, tekst.length() / 2 + 1);
-		}
-		
-		System.out.println(midden);
-	}	
+	}
+
 }

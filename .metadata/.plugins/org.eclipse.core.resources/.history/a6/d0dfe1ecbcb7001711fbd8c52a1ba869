@@ -1,12 +1,10 @@
 package be.pxl.h6.oef2;
 
-import java.util.Scanner;
-
 public class H6Oef2 {
 
 	public static void main(String[] args) {
-		Scanner keyboard = new Scanner(System.in);
-		String string = keyboard.nextLine();
+		//indexOf
+		String string = "Dis is een mooie strings";
 
 		int first_t, first_T, lowestIndex;
 		
@@ -36,7 +34,6 @@ public class H6Oef2 {
 		}
 		
 		System.out.println(string);
-		keyboard.close();
 	}
 	
 	public static String stringParser(String string, int index) {

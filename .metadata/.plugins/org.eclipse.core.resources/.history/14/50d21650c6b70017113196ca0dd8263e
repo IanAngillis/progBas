@@ -10,9 +10,6 @@ public class H6ExOef3 {
 		Random rand = new Random();
 		
 		String sub;
-		int a = rand.nextInt();
-		
-		System.out.println(a);
 		
 		System.out.println("Text: ");
 		String text = keyboard.nextLine();

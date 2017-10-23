@@ -68,5 +68,9 @@ public class Opdracht4 {
 		}
 		
 		System.out.println(midden);
+		
+		
+		
+		
 	}	
 }

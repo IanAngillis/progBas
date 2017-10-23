@@ -58,7 +58,7 @@ public class Opdracht4 {
 		naam = naam + familienaam.substring(1).toLowerCase();
 		System.out.println(naam);
 		
-		tekst = "halloo";
+		tekst = "hallo";
 		String midden;
 		
 		if(tekst.length() % 2 == 1) {
@@ -68,5 +68,9 @@ public class Opdracht4 {
 		}
 		
 		System.out.println(midden);
+		
+		
+		
+		
 	}	
 }

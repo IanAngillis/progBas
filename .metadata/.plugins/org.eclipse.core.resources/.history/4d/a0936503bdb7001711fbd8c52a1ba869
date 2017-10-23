@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class H6Oef2 {
 
 	public static void main(String[] args) {
-		Scanner keyboard = new Scanner(System.in);
+		//indexOf
 		String string = keyboard.nextLine();
 
 		int first_t, first_T, lowestIndex;
@@ -36,7 +36,6 @@ public class H6Oef2 {
 		}
 		
 		System.out.println(string);
-		keyboard.close();
 	}
 	
 	public static String stringParser(String string, int index) {

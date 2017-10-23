@@ -68,5 +68,10 @@ public class Opdracht4 {
 		}
 		
 		System.out.println(midden);
+		
+		StringBuilder s = new StringBuilder("abc";)
+		
+		
+		
 	}	
 }
