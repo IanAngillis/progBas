@@ -31,7 +31,7 @@ public class H6Oef8 {
 		System.out.println("rect1 :" + rect1.getHeight());
 		System.out.println("rect2 :" + rect2.getHeight());
 		
-		rect1.grow(20, 40); //laten nakijken
+		rect1.grow(40, 80); //laten nakijken
 		
 		System.out.println("rect1 :" + rect1.getHeight());
 		System.out.println("rect2 :" + rect2.getHeight());

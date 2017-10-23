@@ -15,7 +15,7 @@ public class H6Oef8 {
 			System.out.println("Punt bevind zich niet in Rectangle");
 		}
 		
-		p1.translate(40, 50);
+		rect1.translate(40, 50);
 		
 		Rectangle rect2 = new Rectangle(p1);
 		rect2.setSize(100, 110);
@@ -28,15 +28,15 @@ public class H6Oef8 {
 			System.out.println("Rect bevind zich niet volledig in rect2");
 		}
 		
-		System.out.println("rect1 :" + rect1.getHeight());
-		System.out.println("rect2 :" + rect2.getHeight());
+		System.out.println("rect1 :" + rect1.getY());
+		System.out.println("rect2 :" + rect2.getY());
 		
-		rect1.grow(20, 40); //laten nakijken
+		rect1.translate(40, -47); //laten nakijken
 		
-		System.out.println("rect1 :" + rect1.getHeight());
-		System.out.println("rect2 :" + rect2.getHeight());
+		System.out.println("rect1 :" + rect1.getY());
+		System.out.println("rect2 :" + rect2.getY());
 		
-		if(rect1.getHeight() == rect2.getHeight()) {
+		if(rect1.getY() == rect2.getY()) {
 			System.out.println("De hoogte van rect1 en rect2 is hetzelfde");
 		} else {
 			System.out.println("De hoogte van rect1 en rect2 is niet hetzelfde");

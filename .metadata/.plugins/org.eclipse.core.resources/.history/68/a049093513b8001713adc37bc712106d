@@ -28,13 +28,13 @@ public class H6Oef8 {
 			System.out.println("Rect bevind zich niet volledig in rect2");
 		}
 		
-		System.out.println("rect1 :" + rect1.getHeight());
-		System.out.println("rect2 :" + rect2.getHeight());
+		System.out.println("rect1 :" + rect1.getY());
+		System.out.println("rect2 :" + rect2.getY());
 		
-		rect1.grow(20, 40); //laten nakijken
+		rect1.grow(40, 80); //laten nakijken
 		
-		System.out.println("rect1 :" + rect1.getHeight());
-		System.out.println("rect2 :" + rect2.getHeight());
+		System.out.println("rect1 :" + rect1.getY());
+		System.out.println("rect2 :" + rect2.getY());
 		
 		if(rect1.getHeight() == rect2.getHeight()) {
 			System.out.println("De hoogte van rect1 en rect2 is hetzelfde");
