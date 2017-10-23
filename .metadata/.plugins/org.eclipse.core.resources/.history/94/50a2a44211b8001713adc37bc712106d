@@ -1,0 +1,21 @@
+package be.pxl.h6.oef8;
+
+import java.awt.Point;
+import java.awt.Rectangle;
+
+public class H6Oef8 {
+
+	public static void main(String[] args) {
+		Rectangle rect1 = new Rectangle(1, 2, 20, 30);
+		Point p1 = new Point(5, 5);
+		
+		if (rect1.contains(p1)) {
+			System.out.println("Punt bevind zich in Rectangle");
+		} else {
+			System.out.println("Punt bevind zich niet in Rectangle");
+		}
+		
+		rect1.translate(40, 50);
+	}
+
+}

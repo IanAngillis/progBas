@@ -25,8 +25,13 @@ public class H6Oef7 {
 			
 		p2.translate(2,3); //verplaatst het punt, argumenten zijn (dx, dy)
 		
-		System.out.println("De x en y voor p1 zijn : " + (int)p1.getX() + "-" + (int)p1.getY());
-		System.out.println("De x en y voor p2 zijn : " + (int)p2.getX() + "-" + (int)p2.getY());
+		int x1 = (int)p1.getX();
+		int y1 = (int)p1.getY();
+		int x2 = (int)p2.getX();
+		int y2 = (int)p2.getY();
+		
+		System.out.println("De x en y voor p1 zijn : " + (int)p1.getX() + "-" + y1 );
+		System.out.println("De x en y voor p2 zijn : " + x2 + "-" + y2 );
 	}
 
 }
