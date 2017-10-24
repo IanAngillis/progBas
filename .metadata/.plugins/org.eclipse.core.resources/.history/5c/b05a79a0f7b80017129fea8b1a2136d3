@@ -109,8 +109,8 @@ public class H6ExOef7 {
 			
 			}
 		
-		//kandidaatKopersInSocialeWoningen = (aantalGezinnenInSocialeWoning / aantalAanvragen) * 100;
-		//System.out.printf("%f.1 % van de kandidaat kopers wonen in sociale woningen.", kandidaatKopersInSocialeWoningen);
+		kandidaatKopersInSocialeWoningen = (aantalGezinnenInSocialeWoning / aantalAanvragen) * 100;
+		System.out.printf("%f.1 % van de kandidaat kopers wonen in sociale woningen.", kandidaatKopersInSocialeWoningen);
 	
 			
 		keyboard.close();
@@ -147,7 +147,7 @@ public class H6ExOef7 {
 				temp.append("Mevrouw ");
 				temp.append(naamV.charAt(index + 1));
 				temp.append(". ");
-				temp.append(naamV.substring(0, index));
+				temp.append(naamV.substring(0, index - 1));
 				
 				familieNaam = temp.toString();
 				return familieNaam;
@@ -159,7 +159,7 @@ public class H6ExOef7 {
 				temp.append("Meneer ");
 				temp.append(naamM.charAt(index + 1));
 				temp.append(". ");
-				temp.append(naamM.substring(0, index));
+				temp.append(naamM.substring(0, index - 1));
 				
 				familieNaam = temp.toString();
 				return familieNaam;
@@ -172,10 +172,10 @@ public class H6ExOef7 {
 			temp.append("De Heer en Mevrouw ");
 			temp.append(naamM.charAt(index + 1));
 			temp.append(". ");
-			temp.append(naamM.substring(0, index));
+			temp.append(naamM.substring(0, index - 1));
 			temp.append("-");
 			index = naamV.indexOf('_');
-			temp.append(naamV.substring(0, index));
+			temp.append(naamV.substring(0, index - 1));
 			
 			familieNaam = temp.toString();
 			return familieNaam;
