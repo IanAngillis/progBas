@@ -1,0 +1,17 @@
+package be.pxl.h6.exoef4;
+
+public class H6ExOef4 {
+
+	public static void main(String[] args) {
+		StringBuilder string = new StringBuilder("");
+		
+		char character = 'a';
+		
+		for(char i = 'a'; i <=  'z'; i++ ) {
+			string.append(i);
+		}
+		
+		System.out.println(string);
+	}
+
+}

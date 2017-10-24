@@ -57,8 +57,22 @@ public class H6Oef9 {
 	
 	public static void printPlacedRectangles(StringBuilder list) {
 		
+		int teller = -1;
+		
 		for(int i = 0; i < list.length(); i++) {
-			System.out.println("Rechthoek " + list.charAt(i) + " is toegevoegd");
+			
+			if(list.charAt(i) == '1') {
+				teller++;
+			}
+			
+			if(teller > 0) {
+				System.out.println("Rechthoek " + list.charAt(i) + list.charAt(i+1) + " is toegevoegd");
+				i++;
+				
+			} else {
+				System.out.println("Rechthoek " + list.charAt(i) + " is toegevoegd");
+			}
+			
 		}
 	}
 	
@@ -71,5 +85,4 @@ public class H6Oef9 {
 		}
 	}
 	
-
 }
