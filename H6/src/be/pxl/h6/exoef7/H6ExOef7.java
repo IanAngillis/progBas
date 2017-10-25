@@ -38,8 +38,6 @@ public class H6ExOef7 {
 				//TODO
 			}
 			
-			aantalAanvragen++;
-			
 			if(code.charAt(0) == 'J') {
 				aantalGezinnenInSocialeWoning++;
 			}
@@ -236,11 +234,11 @@ public class H6ExOef7 {
 			prioriteit = "****";
 			return prioriteit;
 
-		} else if (gezinsInkomen < 2500 && gezinsInkomen >= 2000) {
+		} else if ( gezinsInkomen >= 2000) {
 			prioriteit = "***";
 			return prioriteit;
 			
-		} else if (gezinsInkomen < 2000 && aantalKinderen < 3) {
+		} else if ( aantalKinderen < 3) {
 			prioriteit = "**";
 			return prioriteit;
 		} else {

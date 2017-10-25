@@ -62,7 +62,7 @@ public class H6Oef6 {
 		prijs = (oppervlakte  * 113.5) + motorprijs;
 		
 		if(specialeKleur) {
-			prijs = prijs * 1.10;
+			prijs *= 1.10;
 		}
 		
 		return prijs;
