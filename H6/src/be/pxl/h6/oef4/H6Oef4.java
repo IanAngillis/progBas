@@ -6,7 +6,8 @@ public class H6Oef4 {
 
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);//Aanmaken Scanner
-	
+		
+		
 		String finalString; 
 		
 		/*Input vragen aan de gebruiker*/
@@ -51,7 +52,7 @@ public class H6Oef4 {
 		
 	}
 	
-	//Dezelfde uitleg als firstVariableChecker
+	//Dezelfde uitleg als firstVariableChecker "
 	public static String secondVariableChecker(String tekstVariabele) {
 		
 		int difference;
