@@ -10,10 +10,9 @@ public class H7ExOef7 {
 		int aantalDeelnemers = 0;
 		int seconden;
 		String[][] deelnemers = new String[20][4];
-		
+
 		char[] correcteOplossingen = new char[5];
-		
-		
+
 		// Verkrijg de correcte antwoorden
 		for (int i = 0; i < correcteOplossingen.length; i++) {
 			System.out.println("Correcte antwoord vraag " + (i + 1) + ": ");
@@ -29,16 +28,16 @@ public class H7ExOef7 {
 		}
 
 		while (!deelnemers[aantalDeelnemers][0].equals("0")) {
-			
+
 			System.out.println("Seconden: ");
 			seconden = keyboard.nextInt();
 			deelnemers[aantalDeelnemers][1] = getAnswers();
 			deelnemers[aantalDeelnemers][2] = getTime(seconden);
 			deelnemers[aantalDeelnemers][3] = getPoints(deelnemers[aantalDeelnemers][1], correcteOplossingen, seconden);
-			
+
 			aantalDeelnemers++;
-			
-			//vraag nieuw nummer op
+
+			// vraag nieuw nummer op
 			System.out.println("Deelnemersnummer: ");
 			deelnemers[aantalDeelnemers][0] = keyboard.next();
 
@@ -46,101 +45,100 @@ public class H7ExOef7 {
 				System.out.println("Deelnemersnummer: ");
 				deelnemers[aantalDeelnemers][0] = keyboard.next();
 			}
-			
-			
+
 		}
-		
+
 		printUitslag(deelnemers, (aantalDeelnemers));
 		keyboard.close();
 	}
-	
+
 	public static void printUitslag(String[][] deelnemers, int aantalDeelnemers) {
-		
-		for(int i = 0; i < aantalDeelnemers; i++) {
-			
+
+		for (int i = 0; i < aantalDeelnemers; i++) {
+
 			System.out.print("1.");
-			for(int j = 0; j < 4; j++) {
-				
-				if(j != 1) {
-					System.out.print(" " + deelnemers[i][j] + " " );
-				} 
+			for (int j = 0; j < 4; j++) {
+
+				if (j != 1) {
+					System.out.print(" " + deelnemers[i][j] + " ");
+				}
 			}
-			
+
 			System.out.println();
 		}
 	}
-	
+
 	public static String getAnswers() {
 		Scanner keyboard = new Scanner(System.in);
 		char character;
-		
+
 		StringBuilder temp = new StringBuilder("");
 		String antwoorden = new String("");
-		
-		for(int i = 0; i < 5; i++) {
-			System.out.println("Geef antwoord " + (i+1) + ": ");
+
+		for (int i = 0; i < 5; i++) {
+			System.out.println("Geef antwoord " + (i + 1) + ": ");
 			character = keyboard.next().charAt(0);
-			
-			while(!isValidAnswer(character)) {
+
+			while (!isValidAnswer(character)) {
 				System.out.println("Geef een geldig antwoord in (A/B/C/D/E): ");
 				character = keyboard.next().charAt(0);
 			}
-			
+
 			temp.append(character);
 		}
-		
+
 		antwoorden = temp.toString();
 		return antwoorden;
 	}
-	
+
 	public static String getTime(int seconds) {
 		String tijd = new String("");
 		int minuten;
-		
+
 		minuten = seconds / 60;
 		seconds = seconds % 60;
-		
+
 		tijd = minuten + " m " + seconds + " sec";
-		
+
 		return tijd;
 	}
-	
-	public static String getPoints(String antwoorden, char [] oplossingen, int tijd) {
+
+	public static String getPoints(String antwoorden, char[] oplossingen, int tijd) {
 		String totaalPunten = new String("");
 		int punten = 10;
-		
-		for(int i = 0; i < 5; i++) {
-			
-			if(antwoorden.charAt(i) == oplossingen[i]) {
+
+		for (int i = 0; i < 5; i++) {
+
+			if (antwoorden.charAt(i) == oplossingen[i]) {
 				punten += 3;
-			} else if(antwoorden.charAt(i) == 'E') {
+			} else if (antwoorden.charAt(i) == 'E') {
 				punten += 0;
 			} else {
 				punten -= 1;
 			}
 		}
-		
+
 		punten = puntenInVerbandMetTijd(punten, tijd);
 		totaalPunten = punten + " ptn";
-		
+
 		return totaalPunten;
 	}
 
 	public static int puntenInVerbandMetTijd(int punten, int tijd) {
-		
-		if(tijd >= 300) {
+
+		if (tijd >= 300) {
 			punten -= 5;
-		} else if(tijd >= 200) {
+		} else if (tijd >= 200) {
 			punten += 0;
 		} else if (tijd >= 100) {
 			punten += 2;
-		} else { 
+		} else {
 			punten += 5;
 		}
-		
+
 		return punten;
 	}
-	
+
 	public static boolean isValidAnswer(char c) {
 		switch (c) {
 		case 'A':
@@ -161,10 +159,10 @@ public class H7ExOef7 {
 	}
 
 	public static boolean deelnemersnummerIsNotValid(String number) {
-		if(number.equals("0")) {
+		if (number.equals("0")) {
 			return false;
 		}
-		
+
 		if (number.length() != 4) {
 			return true;
 		}
