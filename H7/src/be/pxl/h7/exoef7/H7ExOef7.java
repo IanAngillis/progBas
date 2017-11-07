@@ -10,7 +10,7 @@ public class H7ExOef7 {
 		int aantalDeelnemers = 0;
 		int seconden;
 		String[][] deelnemers = new String[20][4];
-
+		double [] catagorie = new double[4];
 		char[] correcteOplossingen = new char[5];
 
 		// Verkrijg de correcte antwoorden
@@ -33,7 +33,7 @@ public class H7ExOef7 {
 			seconden = keyboard.nextInt();
 			deelnemers[aantalDeelnemers][1] = getAnswers();
 			deelnemers[aantalDeelnemers][2] = getTime(seconden);
-			deelnemers[aantalDeelnemers][3] = getPoints(deelnemers[aantalDeelnemers][1], correcteOplossingen, seconden);
+			deelnemers[aantalDeelnemers][3] = getPoints(deelnemers[aantalDeelnemers][1], correcteOplossingen, seconden, catagorie);
 
 			aantalDeelnemers++;
 
@@ -47,16 +47,26 @@ public class H7ExOef7 {
 			}
 
 		}
+		
+		calculatePercentsPerCatagory(catagorie, aantalDeelnemers);
 
-		printUitslag(deelnemers, (aantalDeelnemers));
+		printUitslag(deelnemers, aantalDeelnemers, catagorie);
 		keyboard.close();
 	}
+	
+	public static void calculatePercentsPerCatagory(double [] catagorie, int deelnemers) {
+		
+		for(int i = 0; i < catagorie.length; i++) {
+			
+			catagorie[i] = (catagorie[i] / deelnemers) * 100;
+		}
+	}
 
-	public static void printUitslag(String[][] deelnemers, int aantalDeelnemers) {
+	public static void printUitslag(String[][] deelnemers, int aantalDeelnemers, double [] catagorie) {
 
 		for (int i = 0; i < aantalDeelnemers; i++) {
 
-			System.out.print("1.");
+			System.out.print((i+1)+". ");
 			for (int j = 0; j < 4; j++) {
 
 				if (j != 1) {
@@ -66,6 +76,11 @@ public class H7ExOef7 {
 
 			System.out.println();
 		}
+		
+		System.out.printf(">= 300 sec: %.2f % van de deelnemers.\n", catagorie[0]);
+		System.out.printf(">= 200 sec: %.2f % van de deelnemers.\n", catagorie[1]);
+		System.out.printf(">= 100 sec: %.2f % van de deelnemers.\n", catagorie[2]);
+		System.out.printf("<100 sec:  %.2f % van de deelnemers. \n", catagorie[3]);
 	}
 
 	public static String getAnswers() {
@@ -103,7 +118,7 @@ public class H7ExOef7 {
 		return tijd;
 	}
 
-	public static String getPoints(String antwoorden, char[] oplossingen, int tijd) {
+	public static String getPoints(String antwoorden, char[] oplossingen, int tijd, double [] catagorie) {
 		String totaalPunten = new String("");
 		int punten = 10;
 
@@ -118,22 +133,26 @@ public class H7ExOef7 {
 			}
 		}
 
-		punten = puntenInVerbandMetTijd(punten, tijd);
+		punten = puntenInVerbandMetTijd(punten, tijd, catagorie);
 		totaalPunten = punten + " ptn";
 
 		return totaalPunten;
 	}
 
-	public static int puntenInVerbandMetTijd(int punten, int tijd) {
+	public static int puntenInVerbandMetTijd(int punten, int tijd, double [] catagorie) {
 
 		if (tijd >= 300) {
 			punten -= 5;
+			catagorie[0]++;
 		} else if (tijd >= 200) {
 			punten += 0;
+			catagorie[1]++;
 		} else if (tijd >= 100) {
 			punten += 2;
+			catagorie[2]++;
 		} else {
 			punten += 5;
+			catagorie[3]++;
 		}
 
 		return punten;
