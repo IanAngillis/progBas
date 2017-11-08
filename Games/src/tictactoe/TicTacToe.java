@@ -1,15 +1,15 @@
-package fourinarow;
+package tictactoe;
 
 import java.util.Scanner;
 
-public class FourInARow {
+public class TicTacToe {
 
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
 		// Variabelen
 		String player1 = new String("");
 		String player2 = new String("");
-		char[][] gameBoard = new char[7][8];
+		char[][] gameBoard = new char[10][10];
 		int currentPlayer = 0;
 		int round = 0;
 		boolean playerHasWon = false;
@@ -38,15 +38,17 @@ public class FourInARow {
 			printBoard(gameBoard);
 
 			// Get Row and Colum
+			row = getRow();
 			colum = getColum();
 
 			// Checks wether position is already taken or not
-			while (gameBoard[1][colum] != '.') {
-				System.out.println("That colum is already full! Choose another.");
+			while (positionIsTaken(gameBoard, row, colum)) {
+				System.out.println("That position is already full! Choose another.");
+				row = getRow();
 				colum = getColum();
 			}
 
-			setPosition(gameBoard, currentPlayer, colum);
+			setPosition(gameBoard, currentPlayer, row, colum);
 			printBoard(gameBoard);
 
 			if (gameBoardIsFull(gameBoard)) {
@@ -55,7 +57,7 @@ public class FourInARow {
 				playerHasWon = true;
 			}
 
-			if (victoryConditions(gameBoard, currentPlayer, colum)) {
+			if (victoryConditions(gameBoard, currentPlayer, row, colum)) {
 				round++;
 				printVictoryMessage(currentPlayer, round, player1, player2);
 				playerHasWon = true;
@@ -91,9 +93,8 @@ public class FourInARow {
 		}
 	}
 
-	public static boolean victoryConditions(char[][] gameBoard, int currentPlayer, int colum) {
+	public static boolean victoryConditions(char[][] gameBoard, int currentPlayer, int row, int colum) {
 		char chip = getChip(currentPlayer);
-		int row = getRow(gameBoard, colum);
 		boolean playerHasWon = false;
 
 		playerHasWon = checkPosition(gameBoard, row, colum, chip);
@@ -115,6 +116,7 @@ public class FourInARow {
 		chipsInARowDiagonal2 += checkLowerLeft(gameBoard, row, colum, chip);
 		chipsInARowHorizontal += checkLeft(gameBoard, row, colum, chip);
 		chipsInARowDiagonal1 += checkUpperLeft(gameBoard, row, colum, chip);
+		chipsInARowVertical += checkUp(gameBoard, row, colum, chip);
 
 		if (chipChecker(chipsInARowDiagonal1, chipsInARowDiagonal2, chipsInARowHorizontal, chipsInARowVertical)) {
 			return true;
@@ -124,11 +126,31 @@ public class FourInARow {
 	}
 
 	public static boolean chipChecker(int diagonal1, int diagonal2, int horizontal, int vertical) {
-		if (diagonal1 >= 4 || diagonal2 >= 4 || horizontal >= 4 || vertical >= 4) {
+		if (diagonal1 >= 3 || diagonal2 >= 3 || horizontal >= 3 || vertical >= 3) {
 			return true;
 		} else {
 			return false;
 		}
+	}
+	
+	public static int checkUp(char [][] gameBoard, int row, int colum, char chip) {
+		int score = 0;
+
+		row--;
+		
+
+		while (row > 0) {
+
+			if (gameBoard[row][colum] == chip) {
+				score++;
+			} else {
+				return score;
+			}
+
+			row--;
+		}
+
+		return score;
 	}
 
 	public static int checkUpperRight(char[][] gameBoard, int row, int colum, char chip) {
@@ -137,7 +159,7 @@ public class FourInARow {
 		row--;
 		colum++;
 
-		while (row > 0 && colum < 8) {
+		while (row > 0 && colum < 10) {
 
 			if (gameBoard[row][colum] == chip) {
 				score++;
@@ -157,7 +179,7 @@ public class FourInARow {
 
 		colum++;
 
-		while (colum < 8) {
+		while (colum < 10) {
 
 			if (gameBoard[row][colum] == chip) {
 				score++;
@@ -177,7 +199,7 @@ public class FourInARow {
 		row++;
 		colum++;
 
-		while (row < 7 && colum < 8) {
+		while (row < 10 && colum < 10) {
 
 			if (gameBoard[row][colum] == chip) {
 				score++;
@@ -197,7 +219,7 @@ public class FourInARow {
 
 		row++;
 
-		while (row < 7) {
+		while (row < 10) {
 
 			if (gameBoard[row][colum] == chip) {
 				score++;
@@ -217,7 +239,7 @@ public class FourInARow {
 		row++;
 		colum--;
 
-		while (row < 7 && colum > 0) {
+		while (row < 10 && colum > 0) {
 
 			if (gameBoard[row][colum] == chip) {
 				score++;
@@ -272,17 +294,11 @@ public class FourInARow {
 		return score;
 	}
 
-	public static void setPosition(char[][] gameBoard, int currentPlayer, int colum) {
+	public static void setPosition(char[][] gameBoard, int currentPlayer, int row, int colum) {
 
 		char chip = getChip(currentPlayer);
 
-		for (int i = 0; i < gameBoard.length; i++) {
-
-			if (gameBoard[gameBoard.length - 1 - i][colum] == '.') {
-				gameBoard[gameBoard.length - 1 - i][colum] = chip;
-				break;
-			}
-		}
+		gameBoard[row][colum] = chip;
 	}
 
 	public static char getChip(int currentPlayer) {
@@ -294,12 +310,14 @@ public class FourInARow {
 		}
 	}
 
-	/*
-	 * public static boolean positionIsTaken(char [][] gameBoard, int row, int
-	 * colum) {
-	 * 
-	 * if(gameBoard[row][colum] != '.') { return true; } else { return false; } }
-	 */
+	public static boolean positionIsTaken(char[][] gameBoard, int row, int colum) {
+
+		if (gameBoard[row][colum] != '.') {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 	public static int getColum() {
 		Scanner keyboard = new Scanner(System.in);
@@ -308,7 +326,7 @@ public class FourInARow {
 		System.out.println("Colum: ");
 		colum = keyboard.nextInt();
 
-		while (colum < 1 || colum > 7) {
+		while (colum < 1 || colum > 9) {
 			System.out.println("That colum does not exist!");
 			System.out.println("Colum: ");
 			colum = keyboard.nextInt();
@@ -317,15 +335,17 @@ public class FourInARow {
 		return colum;
 	}
 
-	public static int getRow(char[][] gameBoard, int colum) {
-		int row = 0;
+	public static int getRow() {
+		Scanner keyboard = new Scanner(System.in);
+		int row;
 
-		for (int i = 1; i < gameBoard.length; i++) {
+		System.out.println("Row: ");
+		row = keyboard.nextInt();
 
-			if (gameBoard[i][colum] != '.') {
-				row = i;
-				break;
-			}
+		while (row < 1 || row > 9) {
+			System.out.println("That row does not exist!");
+			System.out.println("Row: ");
+			row = keyboard.nextInt();
 		}
 
 		return row;
@@ -385,7 +405,7 @@ public class FourInARow {
 				gameBoard[0][i] = index;
 
 				if (i < gameBoard.length) {
-					gameBoard[i][0] = ' ';
+					gameBoard[i][0] = index;
 				}
 			}
 		}
